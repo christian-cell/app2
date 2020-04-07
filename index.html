@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Product App</title>
+      <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+      <!--esta es la pagina de bootstrap donde escogi el theme litera-->
+ </head>
+ <body>
+      <!--esta va a ser la navegacion de mi app .navbar es el estilo de bootswacht bg  sera background (tipo light en este caso)-->
+     <nav class="navbar navbar-light bg-light">
+         <!--en href le voy a indicar "/" para que me dirija al comienzo de la app-->
+         <a href="/" class="navbar-brand">
+            Product App
+         </a>
+     </nav>
+                <!--utilizare la class="container" para indicar que todo el contenido dentro del div este centrado-->
+     <div class="container">
+                  <!--APPLICATION va a ser toda en una sola fila "row" usando un padding top de 5-->
+         <div id="App" class="row pt-5">
+                    <!--este div sera para el formulario columnas 4 porque bootstrap tiene siempre 12 comlumnas y la otra usara 8-->
+             <div class="col-md-4">
+                    <!--el formulario ira en otro div por que quiero que este dentro de un recuadro blanco lo nombrare class card-->
+                 <div class="card">
+                       <!--a su vez mi formulario tendra otro div para el header y poder darle otro estilo y un formulario-->
+                     <div  class="card-header">
+                         <h4>Add A Product</h4>
+                     </div>
+                        <!--en caso de que el formulario enviase algo a un servidor en vez de id usaria action-->
+                     <form id="product-form" class="card body">
+                                 <!--en el form voy a estilizar inputs por lo tanto abro un div por cada input-->
+                               <!--el div form group es el que se encarga de separarlos por lo tanto ya no los voy a ver todos juntos-->
+                         <div class="form-group">
+                             <!--este imput es para situar el nombre del producto con form-control lo estilizo "bootstrap"-->
+                             <input type="text" id="name" placeholder="Product Name" class="form-control">
+                         </div>
+                             <!--CLASS="FORM-CONTROL" lo usamos para centrar el palceholder dentro del contenedor-->
+                             <!-- en este div voy a estilizar el input donde situamos el precio con "number" y id price-->
+                         <div class="form-group">
+                             <!--con el atributo "step" le indico cuantos decimales acepta el precio en este caso 2 dec-->
+                             <input type="number" step="0.01" id="price" placeholder="Product-Price"  class="form-control">
+                         </div>
+                             <!--este ultimo div con la clase form group lo creare para el placeholder Year y tb centrado con form-control
+                               min ="para indicar el año minimo que el usuario puede usar y value="para indicarle uno por defecto
+                              y max="2022-->
+                         <div class="form-group">
+                            <input type="number" id="year" min="1900" max="2022" value="2015"  placeholder="Year Product" class="form-control">
+                         </div>
+                             <!--por yltimo voy a crear un input sin div porque va a ser el submit con value "Save"
+                             btn btn-primary para darle el color y btn block para que ocupe todo el ancho del form-->
+                         <input type="submit" value="Save" class="btn btn-primary btn-block">
+                     </form>
+                 </div>
+
+                </div>
+                         <!-- este div sera para situar mis productos osea la seccion de la derecha, si bootstrap por defecto me da 12 row y ya use 4 para los 
+                              productos dejare 8 row-->
+                 <div id="product-list" class="col-md-8">
+
+                 </div>
+            </div>
+
+        </div>
+    
+         <script src="App.js"></script>
+      
+    </body>
+</html>
